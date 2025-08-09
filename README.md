@@ -73,10 +73,6 @@ We welcome contributions! To get started:
 
 Please read our Contributing Guidelines for more details.
 
-## 📄 License
-
-Distributed under the MIT License. See LICENSE for more information.
-
 ## 📬 Contact
 
 **Soumay Soni** - [GitHub](https://github.com/SoumaySoni)
@@ -85,4 +81,4 @@ Distributed under the MIT License. See LICENSE for more information.
 
 ---
 
-**Built with ❤️ by the FormForge community**
+**Built with ❤️ by Soumay Soni**

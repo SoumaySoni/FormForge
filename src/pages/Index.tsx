@@ -36,7 +36,11 @@ const Index = () => {
                 <Container maxWidth="lg" sx={{ py: 12 }}>
                     <Box sx={{ textAlign: 'center' }}>
                         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 2, mb: 4 }}>
-                            <Description sx={{ fontSize: 64, color: 'primary.main' }} />
+                            <img
+                                src="/logo.jpeg"
+                                alt="Logo"
+                                style={{ width: 64, height: 64, objectFit: 'contain', backgroundColor: 'transparent' }}
+                            />
                             <Typography
                                 variant="h1"
                                 component="h1"

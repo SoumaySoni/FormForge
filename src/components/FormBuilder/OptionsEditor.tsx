@@ -50,7 +50,6 @@ export function OptionsEditor({ options, onChange }: OptionsEditorProps) {
                 sx={{ pb: 1 }}
             />
             <CardContent sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-                {/* Existing Options */}
                 {options.length > 0 && (
                     <Box display="flex" flexDirection="column" gap={1}>
                         {options.map((option, index) => (

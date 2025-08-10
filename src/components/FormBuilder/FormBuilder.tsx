@@ -27,8 +27,6 @@ export function FormBuilder() {
 
         dispatch(saveForm());
         enqueueSnackbar(`"${currentForm.name}" has been saved to your forms.`, { variant: 'success' });
-
-        // Reset form after saving
         dispatch(clearCurrentForm());
     };
 
@@ -40,9 +38,7 @@ export function FormBuilder() {
 
     return (
         <Box sx={{ display: 'grid', gridTemplateColumns: { xs: '1fr', lg: '2fr 1fr' }, gap: 3 }}>
-            {/* Form Builder Panel */}
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-                {/* Form Settings */}
                 <Card>
                     <CardHeader>
                         <Typography variant="h6" component="h2">
@@ -78,17 +74,11 @@ export function FormBuilder() {
                         </Box>
                     </CardContent>
                 </Card>
-
-                {/* Fields List */}
                 <FieldsList />
             </Box>
-
-            {/* Field Type Selector */}
             <Box>
                 <FieldTypeSelector />
             </Box>
-
-            {/* Save Dialog */}
             <SaveFormDialog
                 open={showSaveDialog}
                 onOpenChange={setShowSaveDialog}

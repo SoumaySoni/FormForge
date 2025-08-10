@@ -9,14 +9,14 @@ import {
     Divider,
 } from '@mui/material';
 import { useAppSelector } from '../../store/hooks';
-import type { FormSubmissionData, FormValidationError } from '../../types/form';
+import type { FormField, FormSubmissionData, FormValidationError } from '../../types/form';
 import { PreviewField } from './PreviewField';
 import { FileText, AlertCircle, CheckCircle } from 'lucide-react';
 import { useToast } from '../../hooks/use-toast';
 import { Link } from 'react-router-dom';
 
 export function FormPreview() {
-    const { currentForm } = useAppSelector((state) => state.formBuilder);
+    const { currentForm } = useAppSelector((state: { formBuilder: { currentForm: any } }) => state.formBuilder);
     const [formData, setFormData] = useState<FormSubmissionData>({});
     const [errors, setErrors] = useState<FormValidationError[]>([]);
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -24,7 +24,7 @@ export function FormPreview() {
 
     useEffect(() => {
         const initialData: FormSubmissionData = {};
-        currentForm.fields.forEach((field) => {
+        currentForm.fields.forEach((field: any) => {
             if (field.defaultValue !== undefined) {
                 initialData[field.id] = field.defaultValue;
             }
@@ -40,7 +40,7 @@ export function FormPreview() {
     const calculateDerivedFields = (data: FormSubmissionData) => {
         const updatedData = { ...data };
         let hasChanges = false;
-        currentForm.fields.forEach((field) => {
+        currentForm.fields.forEach((field:FormField) => {
             if (field.isDerived && field.derivedConfig) {
                 const { parentFields, formula } = field.derivedConfig;
                 const newValue = evaluateFormula(formula, parentFields, data);
@@ -61,7 +61,7 @@ export function FormPreview() {
         try {
             let result = formula;
             parentFields.forEach((fieldId) => {
-                const field = currentForm.fields.find((f) => f.id === fieldId);
+                const field = currentForm.fields.find((f:FormField) => f.id === fieldId);
                 const value = data[fieldId] || '';
                 const fieldPlaceholder =
                     field?.label.toLowerCase().replace(/\s+/g, '_') || fieldId;
@@ -102,7 +102,7 @@ export function FormPreview() {
 
     const validateForm = (): FormValidationError[] => {
         const formErrors: FormValidationError[] = [];
-        currentForm.fields.forEach((field) => {
+        currentForm.fields.forEach((field:FormField) => {
             const value = formData[field.id];
             if (field.isDerived) return;
             if (field.required && (!value || value === '')) {
@@ -220,7 +220,7 @@ export function FormPreview() {
                 />
                 <CardContent>
                     <form onSubmit={handleSubmit}>
-                        {currentForm.fields.map((field) => (
+                        {currentForm.fields.map((field:FormField) => (
                             <PreviewField
                                 key={field.id}
                                 field={field}

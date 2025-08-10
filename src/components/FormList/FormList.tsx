@@ -110,7 +110,7 @@ export function FormList() {
                                     color: 'green',
                                     borderColor: 'green',
                                     '&:hover': {
-                                        backgroundColor: 'rgba(0, 128, 0, 0.1)', // light green background on hover
+                                        backgroundColor: 'rgba(0, 128, 0, 0.1)',
                                         borderColor: 'green',
                                     },
                                 }}
@@ -118,7 +118,7 @@ export function FormList() {
                                 Preview
                             </Button>
                             <Button
-                                variant="outlined" // gives it a border
+                                variant="outlined" 
                                 size="small"
                                 component={Link}
                                 to="/create"
@@ -126,10 +126,10 @@ export function FormList() {
                                 startIcon={<Settings size={16} />}
                                 fullWidth
                                 sx={{
-                                    color: '#fbc02d', // yellow text
-                                    borderColor: '#fbc02d', // yellow border
+                                    color: '#fbc02d',
+                                    borderColor: '#fbc02d', 
                                     '&:hover': {
-                                        backgroundColor: 'rgba(251, 192, 45, 0.08)', // light yellow hover
+                                        backgroundColor: 'rgba(251, 192, 45, 0.08)', 
                                         borderColor: '#fbc02d',
                                     },
                                 }}

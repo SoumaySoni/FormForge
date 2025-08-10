@@ -36,10 +36,9 @@ const formBuilderSlice = createSlice({
         removeField: (state, action: PayloadAction<string>) => {
             state.currentForm.fields = state.currentForm.fields.filter(field => field.id !== action.payload);
         },
-        reorderFields: (state, action: PayloadAction<{ sourceIndex: number; destinationIndex: number }>) => {
-            const { sourceIndex, destinationIndex } = action.payload;
-            const [movedField] = state.currentForm.fields.splice(sourceIndex, 1);
-            state.currentForm.fields.splice(destinationIndex, 0, movedField);
+        // Updated reorderFields to accept the reordered fields array
+        reorderFields: (state, action: PayloadAction<FormField[]>) => {
+            state.currentForm.fields = action.payload;
         },
         saveForm: (state) => {
             if (state.currentForm.name && state.currentForm.fields.length > 0) {

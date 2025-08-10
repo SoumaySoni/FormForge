@@ -69,7 +69,6 @@ export function FieldTypeSelector() {
       placeholder: type === 'textarea' ? 'Enter your text here...' : `Enter ${type}...`,
     };
 
-    // Add options for select, radio, and checkbox
     if (['select', 'radio', 'checkbox'].includes(type)) {
       (baseField as any).options = ['Option 1', 'Option 2', 'Option 3'];
     }

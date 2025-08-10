@@ -42,7 +42,6 @@ export function FieldEditor({ field }: FieldEditorProps) {
 
     const handleFieldUpdate = (updates: Partial<FormField>) => {
         if (updates.isDerived && !canToggleDerived) {
-            // Do nothing here; toast will show on click wrapper
             return;
         }
         dispatch(updateField({ ...field, ...updates }));

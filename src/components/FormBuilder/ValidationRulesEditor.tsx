@@ -100,7 +100,6 @@ export function ValidationRulesEditor({ rules, onChange }: ValidationRulesEditor
                 }
             />
             <CardContent>
-                {/* Existing Rules */}
                 {rules.length > 0 && (
                     <Box mb={2}>
                         {rules.map((rule, index) => (

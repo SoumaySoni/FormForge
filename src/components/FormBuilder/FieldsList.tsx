@@ -1,16 +1,22 @@
 import { useAppSelector } from '../../store/hooks';
 import { FieldEditor } from './FieldEditor';
 import { AlertCircle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import {
     Card,
     CardContent,
     CardHeader,
     Typography,
-    Box
+    Box,
+    Button
 } from '@mui/material';
 
 export function FieldsList() {
     const { currentForm } = useAppSelector(state => state.formBuilder);
+    const navigate = useNavigate();
+    const handlePreviewClick = () => {
+        navigate('/preview');  // Change '/preview' to your target route
+    };
 
     if (currentForm.fields.length === 0) {
         return (
@@ -34,7 +40,12 @@ export function FieldsList() {
         <Card sx={{ border: '1px solid #e0e0e0', boxShadow: 1 }}>
             <CardHeader
                 title={`Form Fields (${currentForm.fields.length})`}
-                sx={{ borderBottom: '1px solid #e0e0e0' }}
+                sx={{ borderBottom: '1px solid #e0e0e0', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}
+                action={
+                    <Button variant="contained" size="medium" onClick={handlePreviewClick}>
+                        Preview
+                    </Button>
+                }
             />
             <CardContent>
                 {currentForm.fields.map((field, index) => (

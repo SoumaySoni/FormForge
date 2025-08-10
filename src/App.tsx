@@ -7,7 +7,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Provider } from "react-redux";
 import { store } from "./store/store";
-import Index from "./pages/index";
+import Index from "./pages/Index";
 import CreateForm from "./pages/CreateForm";
 import PreviewForm from "./pages/PreviewForm";
 import MyForms from "./pages/MyForms";

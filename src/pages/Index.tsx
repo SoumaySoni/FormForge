@@ -37,9 +37,9 @@ const Index = () => {
                     <Box sx={{ textAlign: 'center' }}>
                         <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', gap: 2, mb: 4 }}>
                             <img
-                                src="/logo.jpeg"
+                                src="/logo.svg"
                                 alt="Logo"
-                                style={{ width: 64, height: 64, objectFit: 'contain', backgroundColor: 'transparent' }}
+                                style={{ width: 90, height: 90, objectFit: 'contain', backgroundColor: '#D3D3D380' }}
                             />
                             <Typography
                                 variant="h1"
